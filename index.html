@@ -14,6 +14,8 @@
     </head>
     <body>
         <h1 class = "titel"> Programmeer - Forum </h1>
+        <input id="post" type="text">
+        <button type="submit" onclick=myFunction()>Post</button>
         <div>
             <p>Ik vind programmeren heel leuk!</p>
         </div>
@@ -21,7 +23,15 @@
             <p>Hele leuke leraren.</p>
         </div>
         <script>
-            
+            function myFunction() {
+            if(document.getElementById("post").value == ""){
+                window.alert("Voer wat in!");
+            } else {
+                var creatediv = document.createElement('DIV');
+                document.body.appendChild(creatediv);
+                creatediv.innerHTML = document.getElementById("post").value;
+            }
+            }
         </script>
     </body>
 </html>
