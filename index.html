@@ -4,31 +4,51 @@
         .titel{
             margin-left: 35%;
         }
+        body{
+            background-image: url(Coding.jpg);
+        }
+        #list{
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        #list > div{
+            margin-top: 3%;
+            border: 1px solid #236AB9;
+            background-color: #798EF6;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+        }
+        .input{
+            margin-top: 3%;
+            margin-left: 40%;
+        }
     </style>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Programmeer - Forum</title>
-        
     </head>
     <body>
         <h1 class = "titel"> Programmeer - Forum </h1>
-        <input id="post" type="text">
+        <input class= "input" id="post" type="text">
         <button type="submit" onclick=myFunction()>Post</button>
-        <div>
-            <p>Ik vind programmeren heel leuk!</p>
-        </div>
-        <div>
-            <p>Hele leuke leraren.</p>
+        
+        <div id="list">
+            <div>
+                Ik vind programmeren heel leuk!
+            </div>
+            <div>
+                Hele leuke leraren.
+            </div>
         </div>
         <script>
+            var list = document.getElementById("list");
             function myFunction() {
             if(document.getElementById("post").value == ""){
                 window.alert("Voer wat in!");
             } else {
                 var creatediv = document.createElement('DIV');
-                document.body.appendChild(creatediv);
+                list.appendChild(creatediv);
                 creatediv.innerHTML = document.getElementById("post").value;
             }
             }
